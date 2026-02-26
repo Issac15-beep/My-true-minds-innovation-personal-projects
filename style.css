@@ -31,18 +31,17 @@ h1 {
   margin-top: 10px;
 }
 
-/* Grid for projects */
+/* Projects grid - default mobile layout */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  width: 100%;
-  max-width: 1200px;
-  padding: 0;
-  list-style: none;
-}
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns*/
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0;
+  }
 
-/* Project cards */
+/* Project cards - same width on mobile */
 .project-card {
   background: linear-gradient(145deg, #1b1f27, #222831);
   padding: 30px 20px;
@@ -50,6 +49,10 @@ h1 {
   text-align: center;
   box-shadow: 0 6px 15px rgba(0,0,0,0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  
+  width: 90%;        /* cards take most of mobile width */
+  max-width: 300px;  /* prevent them from being too wide */
+  box-sizing: border-box;
 }
 
 .project-card h2 {
@@ -70,11 +73,18 @@ a {
 }
 
 /* Responsive header */
-@media (max-width: 768px) {
+@media screen and  (max-width: 768px) {
   h1 {
     font-size: 2rem;
   }
   .project-card {
     padding: 25px 15px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .project-card {
+    width: 100%; 
+    max-width: none;
   }
 }

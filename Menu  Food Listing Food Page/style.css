@@ -235,6 +235,10 @@ h3, .login-button, .final {
     display: none;
 }
 
+.section-4 {
+    display: none;
+}
+
 @media screen and (min-width: 500px) {
    .chuks-kitchen {
         font-size: 2.9rem;
@@ -455,6 +459,10 @@ h3, .login-button, .final {
     .whitespace {
         background-color: white;
         padding: 5rem;
+    }
+
+    .section-4 {
+        display: block;
     }
 
     .bottom-grid, footer {

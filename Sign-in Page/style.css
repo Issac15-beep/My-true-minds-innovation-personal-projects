@@ -1,0 +1,368 @@
+@font-face {
+    font-family: "Inter";
+    src: url("./Fonts/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter-semibold";
+    src: url("./Fonts/Inter/static/Inter_18pt-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter-medium";
+    src: url("./Fonts/Inter/static/Inter_18pt-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter-regular";
+    src: url("./Fonts/Inter/static/Inter_18pt-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Island-Moments";
+    src: url("./Fonts/IslandMoments-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("./Fonts/Poppins/Poppins-Regular.ttf") format("truetype")    ;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url("./Fonts/Jost/Jost-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-regular";
+    src: url("./Fonts/Roboto/static/Roboto-Regular.ttf") format("truetype");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.container {
+    padding: 1rem;
+}
+
+.section-1 {
+    display: none;
+}
+
+.section-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: clamp(0.5rem, 3vw, 1.5rem);
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.time {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    line-height: 21px;
+    letter-spacing: -0.32px;
+    white-space: nowrap;
+}
+
+.heading {
+    text-align: center;
+}
+
+.chuks-kitchen {
+    font-family: "Island-Moments", sans-serif;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 5vw, 3rem);
+    color: #FF7A18;
+}
+
+.login {
+    font-family: "Inter-medium", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: 0%;
+}
+
+.login-details {
+    margin: 2rem 0;
+}
+
+.emails, .password { 
+    font-family: "Inter-medium", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    font-size: 0.9rem;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 3px solid rgba(189, 189, 189, 1);
+    border-radius: 10px;
+    padding: 0 1rem;
+    background-color: transparent;
+}
+
+.email-address {
+    font-family: "Inter-regular", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 140%;
+    letter-spacing: -2%;
+}
+
+.password-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid rgba(189, 189, 189, 1);
+    border-radius: 10px;
+    padding: 0 1rem;
+    background-color: transparent;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.forgot {
+    text-align: right;
+    color: rgba(30, 136, 229, 1);
+    margin: 1rem 0;
+}
+
+.forgot-password, .continue-with {
+    font-family: "Inter-regular", sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 16px;
+    letter-spacing: 0%;
+}
+
+.continue-group {
+    text-align: center;
+}
+
+.continue-btn {
+    background-color: #FF7A18;
+    border-radius: 10px;
+    padding: 0.3rem;
+}
+
+.continue {
+    font-family: "Inter-semibold", sans-serif;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: white;
+}
+
+.goggle, .facebook {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgba(189, 189, 189, 1);
+    border-radius: 10px;
+    padding: 0 1rem;
+    background-color: transparent;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.with-google, .with-apple {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: rgba(59, 71, 88, 1);
+}
+
+.final {
+    text-align: center;
+}
+
+.dont {
+    font-family: "Inter-regular", sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 16px;
+    letter-spacing: 0%;
+}
+
+span {
+    color: rgba(28, 127, 249, 1);
+}
+
+.section-4 {
+    display: none;
+}
+
+@media screen and (min-width:500px) {
+    .chuks-kitchen {
+         font-size: 3.5rem;
+    }
+
+    .login {
+       font-size: 2rem;
+    }
+
+    .time, .emails, .password, .email-address, .asteric, .forgot-password, .continue-with, .continue, .with-google, .with-apple,.dont {
+        font-size: 1.1rem;
+    }
+
+    .forgot {
+        text-align: right;
+        color: rgba(30, 136, 229, 1);
+        margin: 2rem 0;
+    }
+}
+
+@media screen and (min-width:600px) {
+    .chuks-kitchen {
+         font-size: 4rem;
+    }
+
+    .login {
+       font-size: 2.5rem;
+    }
+
+    .time, .emails, .password, .email-address, .asteric, .forgot-password, .continue-with, .continue, .with-google, .with-apple,.dont {
+        font-size: 1.3rem;
+    }
+
+    .forgot {
+        text-align: right;
+        color: rgba(30, 136, 229, 1);
+        margin: 2rem 0;
+    }
+}
+
+@media screen and (min-width:900px) {
+    .container {
+        padding: 0;
+        background-color: rgba(238, 240, 244, 1);
+    }
+
+    .display-flex {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-1 {
+        display: block;
+        margin-bottom: 0;  
+    }
+
+    .first-image {
+        width: 100%;
+        height: 100%;
+        background-image: url('./Images/Background image.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        background-color: rgba(255, 122, 24, 0.7);
+        background-blend-mode: multiply;
+    }
+
+    .absolute-texts {
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 0 20rem;
+    }
+
+    .chuk {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 3rem;
+        line-height: 61px;
+        letter-spacing: 0%;
+        color: white;
+    }
+
+    .journey {
+        font-family: "Inter-medium", sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 34px;
+        color: white;
+    }
+
+    .section-2 {
+        display: none;
+    }
+
+    .section-3{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .chuks-kitchen {
+        font-size: 2.7rem;
+    }
+
+    .login {
+       font-size: 1.5rem;
+    }
+
+    .time, .emails, .password, .email-address, .asteric, .forgot-password, .continue-with, .continue, .with-google, .with-apple,.dont {
+        font-size: 1rem;
+    }
+
+    .forgot {
+        text-align: right;
+        color: rgba(30, 136, 229, 1);
+        margin: 2rem 0;
+    }
+
+    .section-4 {
+        display: block;
+    }
+
+    .bottom-grid, footer {
+        background-color: hsl(19, 29%, 32%);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 2rem;
+        color: white;
+    }
+
+    .quick, .contact-us, .bringing {
+        font-family: "Jost", sans-serif;
+        font-weight: 400;
+    }
+
+    .bringing {
+        font-size: 1.1rem;
+    }
+
+    .homes, .copyrights, .explores, .orders, .accounts, .contact, .phone-number, .email, .address, .facebooks, .twitter, .instagram, .linkedin {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 1);
+        font-size: 0.8rem;
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

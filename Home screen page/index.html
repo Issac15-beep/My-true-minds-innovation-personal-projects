@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Screen Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- This is the navigation section of the home screen -->
+    <nav>
+        <h2 class="chuks-kitchen">Chuks Kitchen</h2>
+        <h3 class="home">Home</h3>
+        <h3 class="explore">Explore</h3>
+        <h3 class="orders">My Orders</h3>
+        <h3 class="account">Account</h3>
+        <img src="./Images/Menu.png" alt="hamburger menu image" class="hamburger-menu"> <!--Needed for the mobile version of the home screen -->
+
+        <!-- This is the login button for the home screen -->
+        <button class="login-button">
+            <p class="login">Login</p>
+        </button>
+    </nav>
+
+    <!-- This is the home section of the home screen -->
+    <section class="home-section">
+        <h1 class="home-cooking">The Heart of Nigerian Home Cooking</h1>
+        <p class="handcrafted">Handcrafted with passion, delivered with care</p>
+
+        <button class="discover">
+            <p class="discover-menu">Discover what's new</p>
+        </button>
+    
+        <!-- This is a seperate container entailing the search image and the question for the home screen -->
+        <div class="question">
+          <img src="./Images/search-sm.png" alt="Search image" class="search-image">
+          <p class="craving">What are you craving for today?</p>
+       </div>
+    </section>
+
+    
+
+    <!-- This is the main section of the home screen -->
+    <section class="main-section">
+
+        <!-- This is the first container of the body section of the home screen, it contains the popular categories of food on the app. It has a heading and six categories of food with images and names. -->
+        <div class="first-container">
+            <h1 class="popular-categories">Popular Categories</h1>
+
+            <!-- This container contains the popular categories of food in the app -->
+            <div class="categories">
+                <div class="category">
+                    <img src="./Images/Jollof Delight.png" alt="Jollof Delight image" class="jollofrice">
+                    <p class="jollof-delight">Jollof Delight</p>
+                </div>
+
+                <div class="category">
+                    <img src="./Images/Swallow and soups.png" alt="Swallow and soups image" class="swallow-soup">
+                    <p class="swallow">Swallow & Soups</p>
+                </div>
+
+                <div class="category">
+                    <img src="./Images/Grills.png" alt="Grills and barbeque image" class="grills-bbq">
+                    <p class="grills">Grills & BBQ</p>
+                </div>
+
+                
+                <!--The remaining categories is only needeed for the desktop version of the home screen -->
+                <div class="others">
+                    <img src="./Images/Treats.png" alt="Sweet Treats image" class="sweet">
+                    <p class="treats">Sweet Treats</p>
+                </div>
+
+                <div class="others">
+                    <img src="./Images/Swallow and soups.png" alt="Swallow and soups image" class="swallow-soup">
+                    <p class="jollof-delight">Jollof Delights</p>
+                </div>
+
+                <div class="others">
+                    <img src="./Images/Grills.png" alt="Grills and barbeque image" class="grills-bbq">
+                   <p class="jollof-delight">Jollof Delights</p> 
+                </div>
+            </div>
+
+            <p class="view">View All Categories</p> <!--This is only needeed for the mobile version of the home screen -->
+        </div>
+
+        <div class="second-container"> 
+           <h1 class="chef-special">Chef's Special</h1>
+
+            <!-- This container contains the chef's special meals in the app -->
+            <div class="chefs-special">
+                <div class="special">
+                    <img src="./Images/Jollof Delight.png" alt="Jollof Delight image" class="jollofrice">
+                    <h2 class="rice">Jollof Rice & Fried Chicken</h2>
+                    <p class="signature">Our signature Jolof rice, cooked to perfection, served with succulent fried chicken.</p>
+
+                    <div class="cart">
+                        <p class="amount">₦3,500</p>
+                        <button class="add-to-cart">
+                            <p class="add">Add to cart</p>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="special">
+                    <img src="./Images/Fish-soup.png" alt="Tilapia Fish Soup image" class="tilapia-soup">
+                    <h2 class="pepper-soup">Spicy Tilapia Pepper Soup</h2>
+                    <p class="comforting">A comforting and spicy soup with tender tilapia fish, a true Nigerian delicacy.</p>
+
+                    <div class="cart">
+                        <p class="amount">₦3,500</p>
+                        <button class="add-to-cart">
+                            <p class="add">Add to cart</p>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="special">
+                    <img src="./Images/Jollof Delight.png" alt="Jollof Delight image" class="jollofrice">
+                    <h2 class="rice">Jollof Rice & Fried Chicken</h2>
+                    <p class="signature">Our signature Jolof rice, cooked to perfection, served with succulent fried chicken.</p>
+
+                    <div class="cart">
+                        <p class="amount">₦3,500</p>
+                        <button class="add-to-cart">
+                            <p class="add">Add to cart</p>
+                        </button>
+                    </div>
+                </div>
+
+                <!--The remaining categories of the chef's specials is only needeed for the desktop version of the home screen -->
+                <div class="specials">
+                    <img src="./Images/Jollof Delight.png" alt="Jollof Delight image" class="jollofrice">
+                    <h2 class="rice">Jollof Rice & Smoked Chicken</h2>
+                    <p class="signature">Our signature Jolof rice, cooked to perfection, served with succulent smoked chicken.</p>
+
+                    <div class="cart">
+                        <p class="amount">₦3,500</p>
+                        <button class="add-to-cart">
+                            <p class="add">Add to cart</p>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="specials">
+                    <img src="./Images/Jollof-2.png" alt="Jollof Rice image" class="Jollofrice">
+                    <h2 class="fried">Jollof Rice & Fried Chicken</h2>
+                    <p class="cooked">Our signature Jollof rice, cooked to perfection, served with succulent fried chicken. </p>
+
+                    <div class="cart">
+                        <p class="amount">₦3,500</p>
+                        <button class="add-to-cart">
+                            <p class="add">Add to cart</p>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="specials">
+                    <img src="./Images/Egusi.png" alt="egusi soup image" class ="egusi">
+                    <h2 class="egusi-soup">Egusi Soup & Pounded Yam</h2>
+                    <p class="rich">Rich and savory Egusi soup with assorted meats, paired with freshly pounded yam.</p>
+
+                    <div class="cart">
+                        <p class="amount">₦3,500</p>
+                        <button class="add-to-cart">
+                            <p class="add">Add to cart</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <p class="view">View All Specials</p>
+        </div>
+    </section>
+
+    <section class="concluding-section">
+        <div class="first-section">
+            <h1 class="introducing">Introducing Our New Menu Additions!</h1>
+            <p class="explore-new">Explore exciting new dishes, crafted with the freshest ingredients and authentic Nigerian flavors. Limited time offer!</p>
+
+            <button class="discover">
+                <p class="discover-menu">Discover what's new</p>
+            </button>
+        </div>
+
+        <!-- This second section grid is only needeed for the desktop version of the home screen, it contains quick links to the different pages of the app such as home, explore, my orders, account and contact. -->
+        <div class="second-section-grid">
+            <div class="grid-1">
+                <h2 class="chuks-kitchen">Chuks Kitchen</h2>
+                <p class="bringing">Bringing the authentic<br>flavors of Nigerian<br>home cooking to your<br>table, with passion<br>and care.</p>
+            </div>
+
+            <div class="grid-2">
+                <h2 class="quick">Quick links</h2>
+                <p class="homes">Home</p>
+                <p class="explores">Explore</p>
+                <p class="order">My Orders</p>
+                <p class="accounts">Account</p>
+                <p class="contact">Contact</p>
+            </div>
+             
+            <div class="grid-3">
+                <h2 class="contact-us">Contact Us</h2>
+                <p class="phone-number">+234 801 234 5678</p>
+                <p class="email">hello@chukskitchen.com</p>
+                <p class="address">123 Taste Blvd, Lagos, Nigeria</p>
+            </div>
+
+            <div class="grid-4">
+                <p class="facebook">Facebook</p>
+                <p class="twitter">Twitter</p>
+                <p class="linkedin">LinkedIn</p>
+                <p class="instagram">Instagram</p>
+            </div>
+        </div>
+    </section>
+
+    <!--This is only needeed for the desktop version of the home screen -->
+    <footer>
+        <p class="copyright">© 2020 Lift Media. All rights reserved.</p>
+        <img src="./Images/Up arrow.png" alt="Up arrow image" class="up-arrow"> 
+    </footer>
+</body>
+</html>
+
+<!-- The amends i want to make is to replace the button with a conrainer and make it responsive. -->

@@ -1,0 +1,489 @@
+@font-face {
+    font-family: "Inter";
+    src: url("./Fonts/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter-semibold";
+    src: url("./Fonts/Inter/static/Inter_18pt-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter-medium";
+    src: url("./Fonts/Inter/static/Inter_18pt-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter-regular";
+    src: url("./Fonts/Inter/static/Inter_18pt-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Island-Moments";
+    src: url("./Fonts/IslandMoments-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("./Fonts/Poppins/Poppins-Regular.ttf") format("truetype")    ;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url("./Fonts/Jost/Jost-Regular.ttf") format("truetype");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background-color: #F3F4F6;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 100%;
+    padding: 0 1rem; 
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.chuks-kitchen {
+    font-family: "Island-Moments", sans-serif;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: #FF7A18;
+}
+
+.hamburger-menu {
+    width: 2rem;
+    height: 2rem;
+}
+
+h3, .login-button, .final {
+    display: none;
+}
+
+.home-section {
+    background-image: url("./Images/Mobile-Main-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    min-height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.45);
+    background-blend-mode: multiply;
+}
+
+.white-background {
+    background-color: white;
+}
+
+.chuk {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 40px;
+    color: white;
+    margin: 0;
+}
+
+.home-cooking {
+    font-family: "Inter-medium", sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.95rem, 3vw, 1.2rem);
+    color: white;
+    line-height: 24px;
+}
+
+.topic-1, .topic-3 {
+    padding: 0 1rem;
+}
+
+.topic-1 {
+    font-family: "Inter-semibold", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 34px;
+    letter-spacing: 0%;
+}
+
+.topic-2, .topic-3 {
+    font-family: "Inter-medium", sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 34px;
+    letter-spacing: 0%;
+}
+
+.topic-2 {
+    border-left: 2px solid #FF7A18;
+    background-color: #FFE1C4;
+    padding: 0.3rem 1rem;
+}
+
+.popular-categories {
+    margin: 1rem 0;
+    padding: 0 1rem;
+}
+
+.populars, .entries, .soup {
+    font-family: "Inter-semibold", sans-serif;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0%;
+    font-size: 1.1rem;
+}
+
+.first-container, .second-container {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.categories, .rice-entries, .swallows {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.category, .category-2, .rice-entries-category-2, .swallows-category-2, .rice-entries-category, .swallows-category {  
+    display: flex;
+    align-items: center;
+    background-color: white;
+    gap: 1rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+.category-2, .rice-entries-category-2, .swallows-category-2 {
+    display: none;
+}
+
+.image-category-2 {
+    display: none;
+}
+
+.image-category {
+    min-width: 11rem;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.category-heading, .rice-entries-category-heading, .swallows-category-heading, .category-heading-2, .rice-entries-category-heading-2, .swallows-category-heading-2 {
+    font-family: "Inter-semibold", sans-serif;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0%;
+    font-size: 1rem;
+    color: rgba(31, 41, 55, 1);
+}
+
+.category-paragraph, .rice-entries-category-paragraph, .swallows-category-paragraph, .category-paragraph-2, .rice-entries-category-paragraph-2, .swallows-category-paragraph-2 {
+    font-family: "Inter-regular", sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: rgba(31, 41, 55, 1);
+}
+
+.category-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.amount, .amount-2 {
+    font-family: "Inter-medium", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #FF7A18;
+}
+
+.plus {
+    background-color: #FF7A18;
+    border-radius: 2rem;
+    padding: 0.7rem;
+}
+
+.view {
+    font-family: "Inter-regular", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 140%;
+    letter-spacing: -2%;
+    color: #1E88E5;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+.concluding-section {
+    display: none;
+}
+
+@media screen and (min-width: 500px) {
+   .chuks-kitchen {
+        font-size: 2.9rem;
+    }
+
+    .chuk {
+        font-size: 2.1rem;
+    }
+
+    .home-cooking {
+        font-size: 1.1rem;
+    }
+
+    .populars, .entries, .soup {
+        font-size: 1.3rem;
+    }
+
+    .image-category {
+        max-width: 14rem;
+    }
+
+    .category-heading, .rice-entries-category-heading, .swallows-category-heading {
+        font-size: 1.3rem;
+    }
+
+    .category-paragraph, .rice-entries-category-paragraph, .swallows-category-paragraph {
+        font-size: 1rem;
+    }
+
+    .amount {
+        font-size: 1.3rem;
+    }
+
+    .plus {
+        padding: 0.8rem;
+    }
+
+    .view {
+        margin-top: 1.5rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (min-width:650px) {
+    .chuks-kitchen {
+        font-size: 3.3rem;
+    }
+
+    .chuk {
+        font-size: 2.5rem;
+    }
+
+    .home-cooking {
+        font-size: 1.3rem;
+    }
+
+    .topic-1, .topic-2, .topic-3 {
+        font-size: 1.7rem;
+    }
+
+    .populars, .entries, .soup {
+        font-size: 1.7rem;
+    }
+
+    .category-heading, .rice-entries-category-heading, .swallows-category-heading {
+        font-size: 1.6rem;
+    }
+
+    .category-paragraph, .rice-entries-category-paragraph, .swallows-category-paragraph {
+        font-size: 1.4em;
+    }
+
+    .amount {
+        font-size: 1.5rem;
+    }
+
+    .plus {
+        padding: 0.9rem;
+    }
+
+    .view {
+        margin-top: 1.5rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (min-width:900px) {
+    .home-section, nav{
+        padding: 0 3rem;
+    }
+
+    .home, .explore, .orders, .account, .login {
+        font-family: "Inter-medium", sans-serif;
+        font-weight: 500;
+        display: block;
+    }
+
+    .popular-categories {
+        margin: 3rem;
+    }
+
+    .login-button {
+        display: block;
+        background-color: #FF7A18;
+        border-radius: 10px;
+        padding: 0 2rem;
+        color: white;
+    }
+
+    .chuks-kitchen {
+        font-size: 2.5rem;
+    }
+
+    .home {
+        color: #FF7A18;
+    }
+
+    .hamburger-menu, .second-image {
+        display: none;
+    }
+
+    .home-section {
+        background-image: url("./Images/Background-image.png");
+    
+    }
+    
+    .white-background {
+        background-color: transparent;
+    }
+
+    .topic {
+        background-color: white;
+        margin: 3rem;
+        padding: 1rem 0;
+        border-radius: 10px;
+    }
+
+    .categories, .rice-entries, .swallows {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .category, .category-2, .rice-entries-category-2, .swallows-category-2, .rice-entries-category, .swallows-category {  
+        flex-direction: column;
+    }
+
+    .image-category {
+        display: none;
+    }
+
+    .image-category-2 {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 1rem 1rem 0 0;
+    }
+    
+    .rice-entries-category, .swallows-category {
+        display: none;
+        max-width: 24rem;
+        padding: 0;
+        gap: 0;
+    }
+
+    .category, .category-2, .rice-entries-category-2, .swallows-category-2 {
+        display: block;
+        max-width: 24rem;
+        padding: 0;
+        gap: 0;
+    }
+
+    .view {
+        display: none;
+    }
+
+    .chuks-kitchen {
+        font-size: 2.5rem;
+    }
+
+    .topic-1, .topic-2, .topic-3 {
+        font-size: 1.5rem;
+    }
+
+    .populars, .entries, .soup {
+        font-size: 1.4rem;
+        margin: 2rem 0;
+    }
+
+    .category-content, .rice-entries-category-content-2, .category-content-2, .swallows-category-content-2 {
+        padding: 1.3rem 0.9rem;
+    }
+
+    .category-heading, .rice-entries-category-heading, .swallows-category-heading, .swallows-category-heading, .category-heading-2, .rice-entries-category-heading-2, .swallows-category-heading-2 {
+        font-size: 1.4rem;
+    }
+
+    .category-paragraph, .rice-entries-category-paragraph, .swallows-category-paragraph, .swallows-category-paragraph, .category-paragraph-2, .rice-entries-category-paragraph-2, .swallows-category-paragraph-2 {
+        font-size: 1.1em;
+    }
+
+    .amount {
+        font-size: 1.2rem;
+    }
+    .amount-2 {
+        display: none;
+    }
+
+    .plus {
+        padding: 0.9rem;
+    }
+
+    .view {
+        margin-top: 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    .whitespace {
+        background-color: white;
+        padding: 5rem;
+    }
+
+    .bottom-grid, footer {
+        background-color: hsl(19, 29%, 32%);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 2rem;
+        color: white;
+    }
+
+    .quick, .contact-us, .bringing {
+        font-family: "Jost", sans-serif;
+        font-weight: 400;
+    }
+
+    .bringing {
+        font-size: 1.1rem;
+    }
+
+    .homes, .copyrights, .explores, .order, .accounts, .contact, .phone-number, .email, .address, .facebooks, .twitter, .instagram, .linkedin {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 1);
+        font-size: 0.8rem;
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,507 @@
+@font-face {
+    font-family: "Inter";
+    src: url("./Fonts/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter-semibold";
+    src: url("./Fonts/Inter/static/Inter_18pt-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter-medium";
+    src: url("./Fonts/Inter/static/Inter_18pt-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter-regular";
+    src: url("./Fonts/Inter/static/Inter_18pt-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Island-Moments";
+    src: url("./Fonts/IslandMoments-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("./Fonts/Poppins/Poppins-Regular.ttf") format("truetype")    ;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url("./Fonts/Jost/Jost-Regular.ttf") format("truetype");
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-size: 16px;
+    background-color: #F3F4F6;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 100%;
+    padding: 0 1.5rem; 
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.home, .explore, .orders, .account, .login-button {
+    display: none;
+}
+
+.chuks-kitchen {
+    font-family: "Island-Moments", sans-serif;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: #FF7A18;
+}
+
+.hamburger-menu {
+    width: 2rem;
+    height: 2rem;
+}
+
+section.home-section {
+    position: relative;
+    background-image: url("./Images/Mobile-Main-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    min-height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 1rem;
+    background-color: rgba(0, 0, 0, 0.45);
+    background-blend-mode: multiply;
+}
+
+.home-cooking, .introducing {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    line-height: 40px;
+    color: white;
+    margin: 0;
+}
+
+.handcrafted, .explore-new {
+    font-family: "Inter-medium", sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.95rem, 3vw, 1.2rem);
+    color: white;
+    line-height: 24px;
+}
+
+.discover {
+    border: 1px solid #FF7A18;
+    background-color: #FF7A18;
+    border-radius: 10px;
+    color: white;
+    padding: 0.2rem 1.2rem;
+    cursor: pointer;
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+}
+
+.discover-menu {
+    font-family: "Inter-semibold", sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.question {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 18rem;
+    border-radius: 10px;
+    gap: 0.5rem;
+    padding: 0.2rem 1rem;
+    color: #1F2937;
+}
+
+.search-image {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+}
+
+.craving {
+    font-family: "Inter-regular", sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    line-height: 140%;
+    letter-spacing: -2%;
+    margin: 0;
+}
+
+.main-section {
+    margin: 2rem 0;
+}
+
+.first-container, .second-container {
+    text-align: center;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.popular-categories, .chef-special {
+    font-family: "Inter-semibold", sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    color: #1F2937;
+    padding: 4rem 0 2rem 0;
+    margin: 0;
+}
+
+.categories, .chefs-special {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.category, .special, .others, .specials {  
+    background-color: white;
+    width: 90%;
+    max-width: 23rem;
+    border-radius: 1rem;
+}
+
+.jollofrice, .swallow-soup, .grills-bbq, .tilapia-soup, .sweet {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.jollof-delight, .swallow, .grills, .treats {
+    font-family: "Inter-medium", sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+    color: #1F2937;
+    padding: 1rem;
+    margin: 0;
+}
+
+.others {
+    display: none;
+}
+
+.view {
+    font-family: "Inter-regular", sans-serif;
+    font-weight: 400;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: #1E88E5;
+    margin-top: 1.5rem;
+}
+
+.rice, .pepper-soup, .fried, .egusi-soup {
+    font-family: "Inter-semibold", sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
+    line-height: 34px;
+    color: #1F2937;
+    padding: 1rem 0.5rem 0 0.5rem;
+    margin: 0;
+}
+
+.signature, .comforting, .cooked, .rich {
+    font-family: "Inter-medium", sans-serif;
+    font-weight: 500;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    line-height: 24px;
+    color: #1F2937;
+    padding: 0 0.5rem 1rem 0.5rem;
+    margin: 0;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem 0 1rem;
+    margin: 1rem 0;
+}
+
+.amount {
+    font-family: "Inter-medium", sans-serif;
+    font-weight: 500;
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    color: #FF7A18;
+    margin: 0;
+}
+
+.add-to-cart {
+    border: 1px solid #FF7A18;
+    background-color: #FF7A18;
+    border-radius: 10px;
+    color: white;
+    padding: 0 2rem;
+    cursor: pointer;
+}
+
+.add {
+    font-family: "Inter-semibold", sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+}
+
+.specials {
+    display: none;
+}
+
+.first-section {
+    background-image: url("./Images/Mobile-Addition-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    min-height: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.second-section-grid, footer {
+    display: none;
+}
+
+@media screen and (min-width: 600px) {
+    .chuks-kitchen {
+        font-size: clamp(3rem, 5vw, 4.5rem);
+    }
+
+    .hamburger-menu {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .home-cooking, .introducing {
+        font-size: clamp(2.3rem, 5vw, 4.5rem);
+    }
+
+    .handcrafted, .explore-new {
+        font-size: clamp(1.3rem, 3vw, 2.5rem);
+    }
+
+    .discover {
+        padding: 0.2rem 2.2rem;
+    }
+
+    .discover-menu {
+        font-size: 1.3rem;
+    }
+
+    .question {
+        width: 23rem;
+        border-radius: 1rem;
+        gap: 0.7rem;
+        padding: 1rem;
+    }
+
+    .search-image {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .craving {
+        font-size: clamp(1.2rem, 2.5vw, 2rem);
+    }
+
+
+    .popular-categories, .chef-special {
+        font-size: clamp(1.6rem, 4vw, 2.1rem);
+    }
+
+    .category, .special {  
+        max-width: 30rem;
+    }
+
+    .jollof-delight, .swallow, .grills {
+        font-size: clamp(1.1rem, 3vw, 1.5rem);
+    }
+
+    .view {
+        font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    }
+
+    .rice, .pepper-soup {
+        font-size: clamp(1.5rem, 3vw, 1.8rem);
+        padding: 1rem 0.5rem 0.5rem 0.5rem;
+    }
+
+    .signature, .comforting {
+        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+        padding: 0.5rem 0.5rem 1.2rem 0.5rem;
+    }
+
+    .cart {
+        padding: 0 1rem 0 1rem;
+        margin: 2rem 0;
+    }
+
+    .amount {
+        font-size: clamp(1.2rem, 3vw, 1.6rem);
+    }
+
+    .add-to-cart {
+        padding: 0 4rem;
+    }  
+
+    .add {
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    }
+}
+
+@media screen and (min-width:900px) {
+    .home, .explore, .orders, .account, .login-button {
+        font-family: "Inter-medium", sans-serif;
+        font-weight: 500;
+        display: block;
+    }
+
+    .home {
+        color: #FF7A18;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .chuks-kitchen {
+        font-size: clamp(1rem, 5vw, 2rem);
+    }
+
+    .login-button {
+        border: 1px solid #FF7A18;
+        background-color: #FF7A18;
+        border-radius: 10px;
+        color: white;
+        padding: 0 2rem;
+    }
+
+    .login {
+        font-family: "Inter-semibold", sans-serif;
+        font-weight: 600;
+    }
+
+    section.home-section {
+        background-image: url("./Images/desktop-screen-main-background.png");
+        height: auto;
+        min-height: 40rem;
+        padding: 4rem 2rem;
+    }
+
+    .home-cooking, .introducing {
+        font-size: clamp(1.7rem, 5vw, 3.2rem);
+    }
+
+    .handcrafted, .explore-new {
+        font-size: clamp(0.9rem, 3vw, 1.6rem);
+    }
+
+    .question {
+        width: 40rem;
+        border-radius: 1rem;
+        gap: 0.7rem;
+        padding: 1rem;
+    }
+
+    .craving {
+        font-size: clamp(1rem, 2.5vw, 1.6rem);
+    }
+
+    .popular-categories, .chef-special {
+        font-size: clamp(1.3rem, 4vw, 1.8rem);
+    }
+
+    .category, .special, .others, .specials {  
+        display: block;
+        max-width: 24rem;
+    }
+
+    .jollof-delight, .swallow, .grills, .treats {
+        font-size: clamp(1rem, 3vw, 1.3rem);
+        padding: 2rem 0;
+    }
+
+    .rice, .pepper-soup, .fried, .egusi-soup {
+        font-size: clamp(1.1rem, 3vw, 1.3rem);
+        padding: 1rem 0.5rem 0.5rem 0.5rem;
+    }
+
+    .signature, .cooked, .rich {
+        font-size: clamp(0.98rem, 2.5vw, 1.2rem);
+        padding: 0.5rem 0.5rem 1.2rem 0.5rem;
+    }
+
+    .comforting {
+        font-size: clamp(0.98rem, 2.5vw, 1.2rem);
+        padding: 0.5rem 0.7rem 1.2rem 0.7rem;
+    }
+
+    .amount {
+        font-size: clamp(0.8rem, 3vw, 1.1rem);
+    }
+
+    .add {
+        font-size: clamp(0.7rem, 2.5vw, 1.2rem);
+    }
+
+    .view {
+        display: none;
+    }
+
+    .first-section {
+        background-image: url("./Images/Addition-background.png");
+        padding: 5rem 20rem 5rem 1rem;
+    }
+
+    .second-section-grid, footer {
+        background-color: hsl(19, 29%, 32%);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 2rem;
+        color: white;
+    }
+
+    .quick, .contact-us, .bringing {
+        font-family: "Jost", sans-serif;
+        font-weight: 400;
+    }
+
+    .bringing {
+        font-size: 1.1rem;
+    }
+
+    .homes, .copyright, .explores, .order, .accounts, .contact, .phone-number, .email, .address, .facebook, .twitter, .instagram, .linkedin {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 1);
+        font-size: 0.8rem;
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

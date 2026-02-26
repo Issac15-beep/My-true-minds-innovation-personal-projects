@@ -1,0 +1,143 @@
+@font-face {
+    font-family: "Inter-semibold";
+    src: url("./Fonts/Inter/static/Inter_18pt-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter-medium";
+    src: url("./Fonts/Inter/static/Inter_18pt-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Island-Moments";
+    src: url("./Fonts/IslandMoments-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("./Fonts/Poppins/Poppins-Regular.ttf") format("truetype")    ;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url("./Fonts/Jost/Jost-Regular.ttf") format("truetype");
+}
+
+body {
+    margin: 0;
+    font-size: 16px;
+    background-color: #F3F4F6;
+}
+
+.main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 100%;
+    padding: 0 1.5rem; 
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.home, .explore, .orders, .account, .login-button {
+    display: none;
+}
+
+.chuks-kitchen {
+    font-family: "Island-Moments", sans-serif;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: #FF7A18;
+}
+
+.hamburger-menu {
+    width: 2rem;
+    height: 2rem;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 85vw;
+    flex: 1;
+}
+
+.second-section-grid, footer {
+    display: none;
+}
+
+@media screen and (min-width:900px) {
+    body {
+        display: block;
+    }
+
+    .home, .explore, .orders, .account, .login-button {
+        font-family: "Inter-medium", sans-serif;
+        font-weight: 500;
+        display: flex;
+    }
+
+    .home {
+        color: #FF7A18;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .chuks-kitchen {
+        font-size: clamp(1rem, 5vw, 2rem);
+    }
+
+    .login-button {
+        border: 1px solid #FF7A18;
+        background-color: #FF7A18;
+        border-radius: 10px;
+        color: white;
+        padding: 0 2rem;
+    }
+
+    .login {
+        font-family: "Inter-semibold", sans-serif;
+        font-weight: 600;
+    }
+    
+
+    .second-section-grid, footer {
+        background-color: hsl(19, 29%, 32%);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 2rem;
+        color: white;
+    }
+
+    .quick, .contact-us, .bringing {
+        font-family: "Jost", sans-serif;
+        font-weight: 400;
+    }
+
+    .bringing {
+        font-size: 1.1rem;
+    }
+
+    .homes, .copyright, .explores, .order, .accounts, .contact, .phone-number, .email, .address, .facebook, .twitter, .instagram, .linkedin {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 1);
+        font-size: 0.8rem;
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

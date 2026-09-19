@@ -10,18 +10,14 @@
     
     <!-- This is the navigation section of the home screen -->
     <nav>
-        <h2 class="chuks-kitchen">Chuks Kitchen</h2>
-        <h3 class="home">Home</h3>
-        <h3 class="explore">Explore</h3>
-        <h3 class="orders">My Orders</h3>
-        <h3 class="account">Account</h3>
-        <img src="./Image/Menu.png" alt="hamburger menu image" class="hamburger-menu"> <!--Needed for the mobile version of the home screen -->
-
-        <!-- This is the login button for the home screen -->
-        <div class="login-button">
-            <p class="login">Login</p>
-        </div>
+        <a class="brand-link" href="../Home screen page/home-screen.html"><h2 class="chuks-kitchen">Chuks Kitchen</h2></a>
+        <h3 class="home"><a href="../Home screen page/home-screen.html">Home</a></h3>
+        <h3 class="explore"><a href="../Menu  Food Listing Food Page/menu.html">Explore</a></h3>
+        <h3 class="orders"><a href="../../cart.html">My Orders</a></h3>
+        <h3 class="account"><a href="../Home screen page/account.html">Account</a></h3>
+        <a href="../Home screen page/home-screen.html"><img src="./Image/Menu.png" alt="hamburger menu image" class="hamburger-menu"></a> <!--Needed for the mobile version of the home screen -->
     </nav>
+    <div class="welcome-row"><p class="welcome-message" data-welcome>Welcome, Guest</p></div>
 
     <section class="display-grid">
         <section class="first">
@@ -171,4 +167,8 @@
         </footer>
     </div>
 </body>
+<script>
+    const detailsUser = JSON.parse(localStorage.getItem('chuksKitchenUser') || 'null');
+    document.querySelector('[data-welcome]').textContent = `Welcome, ${detailsUser && detailsUser.email ? detailsUser.email : 'Guest'}`;
+</script>
 </html>

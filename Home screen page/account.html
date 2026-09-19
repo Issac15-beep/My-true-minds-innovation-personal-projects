@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account | Chuks Kitchen</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+    <nav>
+        <a class="brand-link" href="home-screen.html"><h2 class="chuks-kitchen">Chuks Kitchen</h2></a>
+        <h3 class="home"><a href="home-screen.html">Home</a></h3>
+        <h3 class="explore"><a href="../Menu  Food Listing Food Page/menu.html">Explore</a></h3>
+        <h3 class="orders"><a href="../../cart.html">My Orders</a></h3>
+        <h3 class="account"><a href="account.html">Account</a></h3>
+        <a href="home-screen.html"><img src="./Images/Menu.png" alt="hamburger menu image" class="hamburger-menu"></a>
+    </nav>
+    <div class="welcome-row"><p class="welcome-message" id="account-welcome"></p></div>
+
+    <main class="account-main">
+        <section class="account-hero">
+            <p class="eyebrow">YOUR PROFILE</p>
+            <h1>Account</h1>
+            <p>Keep your Chuks Kitchen details close and ready for your next order.</p>
+        </section>
+
+        <section class="account-card" aria-labelledby="account-details-heading">
+            <div class="avatar" id="account-avatar">G</div>
+            <div class="account-details">
+                <h2 id="account-details-heading">Account details</h2>
+                <div class="detail-row"><span>Email</span><strong id="account-email">Not available</strong></div>
+                <div class="detail-row"><span>Phone</span><strong id="account-phone">Not available</strong></div>
+                <div class="detail-row"><span>Member status</span><strong class="status">Active member</strong></div>
+            </div>
+        </section>
+
+        <div class="account-actions">
+            <a class="account-action primary" href="../../cart.html">View my orders</a>
+            <a class="account-action secondary" href="../Sign-in Page/forgot-password.html">Update details</a>
+        </div>
+    </main>
+
+    <script>
+        const accountUser = JSON.parse(localStorage.getItem('chuksKitchenUser') || 'null');
+        const email = accountUser && accountUser.email ? accountUser.email : 'Guest';
+        document.getElementById('account-welcome').textContent = `Welcome, ${email}`;
+        document.getElementById('account-email').textContent = accountUser && accountUser.email ? accountUser.email : 'Not available';
+        document.getElementById('account-phone').textContent = accountUser && accountUser.phone ? accountUser.phone : 'Not available';
+        document.getElementById('account-avatar').textContent = email.charAt(0).toUpperCase();
+    </script>
+</body>
+</html>

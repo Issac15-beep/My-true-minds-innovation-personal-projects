@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#173f35">
+    <title>Welcome to My Kitchen | Chuks Kitchen</title>
+    <style>
+        @font-face {
+            font-family: "Jost";
+            src: url("Onboarding Page/Fonts/Jost/static/Jost-Regular.ttf") format("truetype");
+        }
+
+        @font-face {
+            font-family: "Inter";
+            src: url("Onboarding Page/Fonts/Inter/static/Inter_18pt-Regular.ttf") format("truetype");
+        }
+
+        @font-face {
+            font-family: "Inter-semibold";
+            src: url("Onboarding Page/Fonts/Inter/static/Inter_18pt-SemiBold.ttf") format("truetype");
+        }
+
+        :root {
+            --green: #173f35;
+            --green-soft: #286254;
+            --orange: #f47721;
+            --cream: #fff8ee;
+            --gold: #f4c46e;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background: var(--cream);
+            color: var(--green);
+            font-family: "Inter", sans-serif;
+        }
+
+        .welcome-page {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.9fr);
+            min-height: 100vh;
+        }
+
+        .visual-panel {
+            position: relative;
+            display: flex;
+            min-height: 42rem;
+            padding: clamp(1.5rem, 4vw, 3.5rem);
+            overflow: hidden;
+            background: var(--green);
+        }
+
+        .visual-panel::before,
+        .visual-panel::after {
+            position: absolute;
+            content: "";
+            border: 1px solid rgba(244, 196, 110, 0.4);
+            border-radius: 50%;
+        }
+
+        .visual-panel::before {
+            width: 30rem;
+            height: 30rem;
+            right: -12rem;
+            bottom: -10rem;
+        }
+
+        .visual-panel::after {
+            width: 18rem;
+            height: 18rem;
+            right: -5rem;
+            bottom: -4rem;
+        }
+
+        .brand {
+            position: relative;
+            z-index: 1;
+            align-self: flex-start;
+            color: var(--gold);
+            font-family: "Jost", sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1;
+        }
+
+        .dish-image {
+            position: absolute;
+            right: 7%;
+            bottom: 6%;
+            width: min(77%, 34rem);
+            aspect-ratio: 0.9;
+            object-fit: cover;
+            border: 0.7rem solid rgba(255, 248, 238, 0.92);
+            border-radius: 48% 48% 8% 8%;
+            box-shadow: 1.2rem 1.2rem 0 rgba(244, 196, 110, 0.18);
+            transform: rotate(4deg);
+        }
+
+        .visual-caption {
+            position: absolute;
+            z-index: 1;
+            right: clamp(1.5rem, 5vw, 4rem);
+            bottom: 3rem;
+            max-width: 13rem;
+            color: var(--cream);
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .content-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(2rem, 7vw, 7rem);
+        }
+
+        .kicker {
+            margin: 0 0 1.25rem;
+            color: var(--orange);
+            font-family: "Inter-semibold", sans-serif;
+            font-size: 0.78rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            max-width: 35rem;
+            margin: 0;
+            font-family: "Inter-semibold", sans-serif;
+            font-size: clamp(3.2rem, 7vw, 6.5rem);
+            line-height: 0.98;
+            letter-spacing: -0.04em;
+        }
+
+        .intro {
+            max-width: 31rem;
+            margin: 1.75rem 0 2.25rem;
+            color: #557066;
+            font-size: clamp(1rem, 1.5vw, 1.15rem);
+            line-height: 1.75;
+        }
+
+        .continue-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: min(100%, 20rem);
+            padding: 1rem 1.15rem 1rem 1.4rem;
+            border-radius: 999px;
+            background: var(--orange);
+            color: white;
+            font-family: "Inter-semibold", sans-serif;
+            text-decoration: none;
+            transition: transform 180ms ease, background-color 180ms ease;
+        }
+
+        .continue-button:hover,
+        .continue-button:focus-visible {
+            background: #d95f12;
+            transform: translateY(-3px);
+        }
+
+        .arrow {
+            display: grid;
+            width: 2.2rem;
+            height: 2.2rem;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            font-size: 1.3rem;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            margin-top: 4rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid #e8daca;
+        }
+
+        .feature {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: 0.65rem;
+            color: #557066;
+            font-size: 0.82rem;
+        }
+
+        .feature-icon {
+            display: grid;
+            width: 2rem;
+            height: 2rem;
+            place-items: center;
+            border-radius: 50%;
+            background: #f9dfbb;
+            color: var(--orange);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 760px) {
+            .welcome-page {
+                display: block;
+            }
+
+            .visual-panel {
+                min-height: 27rem;
+            }
+
+            .dish-image {
+                right: 8%;
+                bottom: -12%;
+                width: 58%;
+            }
+
+            .visual-caption {
+                right: 1.5rem;
+                bottom: 1.5rem;
+                max-width: 10rem;
+            }
+
+            .content-panel {
+                padding: 3.5rem 1.5rem 2.5rem;
+            }
+
+            .features {
+                margin-top: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="welcome-page">
+        <section class="visual-panel" aria-label="A taste of Chuks Kitchen">
+            <div class="brand">Chuks Kitchen</div>
+            <img class="dish-image" src="Onboarding Page/Images/First background image.png" alt="A freshly prepared Nigerian meal">
+            <p class="visual-caption">Authentic recipes, generous portions, and a seat at our table.</p>
+        </section>
+
+        <section class="content-panel">
+            <p class="kicker">A warm welcome awaits</p>
+            <h1>Welcome to my kitchen.</h1>
+            <p class="intro">Come in, get comfortable, and discover the rich, homemade flavors of Nigeria. Your next favorite meal is only a step away.</p>
+            <a class="continue-button" href="Onboarding Page/welcome.html">
+                <span>Continue to Chuks Kitchen</span>
+                <span class="arrow" aria-hidden="true">&#8594;</span>
+            </a>
+
+            <div class="features" aria-label="Kitchen promises">
+                <div class="feature"><span class="feature-icon" aria-hidden="true">&#9733;</span><span>Made with care</span></div>
+                <div class="feature"><span class="feature-icon" aria-hidden="true">&#9825;</span><span>Full of flavor</span></div>
+                <div class="feature"><span class="feature-icon" aria-hidden="true">&#10003;</span><span>Fresh every day</span></div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

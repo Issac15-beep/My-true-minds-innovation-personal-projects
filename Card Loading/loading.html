@@ -3,48 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card order completion</title>
+    <title>Card Loading</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main">
         <nav>
-            <h2 class="chuks-kitchen">Chuks Kitchen</h2>
-            <h3 class="home">Home</h3>
-            <h3 class="explore">Explore</h3>
-            <h3 class="orders">My Orders</h3>
-            <h3 class="account">Account</h3>
-            <img src="./Image/Menu.png" alt="hamburger menu image" class="hamburger-menu"> <!--Needed for the mobile version of the home screen -->
-
-            <!-- This is the login button for the home screen -->
-            <button class="login-button">
-                <p class="login">Login</p>
-            </button>
+            <a class="brand-link" href="../Home screen page/home-screen.html"><h2 class="chuks-kitchen">Chuks Kitchen</h2></a>
+            <h3 class="home"><a href="../Home screen page/home-screen.html">Home</a></h3>
+            <h3 class="explore"><a href="../Menu  Food Listing Food Page/menu.html">Explore</a></h3>
+            <h3 class="orders"><a href="../../cart.html">My Orders</a></h3>
+            <h3 class="account"><a href="../Home screen page/account.html">Account</a></h3>
+            <a href="../Home screen page/home-screen.html"><img src="./Image/Menu.png" alt="hamburger menu image" class="hamburger-menu"></a> <!--Needed for the mobile version of the home screen -->
         </nav>
+        <div class="welcome-row"><p class="welcome-message" data-welcome>Welcome, Guest</p></div>
 
     
 
-        <section class="body-content">
-            <div class="container">
-                <img src="./Image/Icon.png" alt="" class="check">
-                
-
-                <div class="order-success">
-                    <h1 class="ordered">Order Placed Successful</h1>
-                    <p class="delicious">Your delicious Chuks Kitchen meal is on its way!</p>
-                </div>
-
-                <div class="track">
-                    <h1 class="confirmed">Order #123RGR231567Y Confirmed</h1>
-
-                    <div class="track-order">
-                        <p class="content">Track Order</p>
-                    </div>
-
-                    <p class="receipt">Generate Receipt</p>
-                    <p class="help">Need help with your order?</p>
-                </div>
-            </div>
+        <section class="loading">
+            <img src="./Image/loading.png" alt="" class="loading-image">
         </section> 
     </div>           
 
@@ -85,4 +62,8 @@
     </footer>
     
 </body>
+<script>
+    const loadingUser = JSON.parse(localStorage.getItem('chuksKitchenUser') || 'null');
+    document.querySelector('[data-welcome]').textContent = `Welcome, ${loadingUser && loadingUser.email ? loadingUser.email : 'Guest'}`;
+</script>
 </html>

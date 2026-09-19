@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart — Chuks Kitchen</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="logo" href="My-true-minds-innovation-personal-projects/Home screen page/home-screen.html">Chuks Kitchen</a>
+  <ul class="topnav">
+    <li><a href="My-true-minds-innovation-personal-projects/Home screen page/home-screen.html">Home</a></li>
+    <li><a href="My-true-minds-innovation-personal-projects/Menu  Food Listing Food Page/menu.html">Explore</a></li>
+    <li class="active"><a href="cart.html">My Orders</a></li>
+    <li><a href="My-true-minds-innovation-personal-projects/Home screen page/account.html">Account</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div class="welcome-row"><div class="welcome-message" id="cart-welcome">Welcome, Guest</div></div>
+
+<main>
+  <h1 class="page-title">Your CART</h1>
+  <div class="card">
+    <div class="card-header">Your Cart</div>
+    <div id="cart-items"></div>
+    <div class="add-more">+ Add more items from Chuks Kitchen</div>
+  </div>
+  <div class="cart-footer-actions">
+    <a class="primary-btn" href="order-summary.html" style="text-decoration:none; text-align:center;">Proceed to Order Summary</a>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-logo">Chuks Kitchen</div>
+      <div class="foot-desc">Bringing the authentic flavors of Nigerian home cooking to your table, with passion and care.</div>
+    </div>
+    <div class="foot-col">
+      <h4>Quick Links</h4>
+      <div>Home</div><div>Explore</div><div>My Orders</div><div>Account</div><div>Contact</div>
+    </div>
+    <div class="foot-col">
+      <h4>Contact Us</h4>
+      <div>+234 800 234 5678</div><div>hello@chukskitchen.com</div><div>123 Tiaha Blvd, Lagos, Nigeria</div>
+    </div>
+    <div class="foot-col">
+      <h4>&nbsp;</h4>
+      <div>Facebook</div><div>Twitter</div><div>LinkedIn</div><div>Instagram</div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Chuks Kitchen. All rights reserved.</span>
+    <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+  </div>
+</footer>
+
+<script src="cart.js"></script>
+<script>
+  const cartUser = JSON.parse(localStorage.getItem('chuksKitchenUser') || 'null');
+  document.getElementById('cart-welcome').textContent = `Welcome, ${cartUser && cartUser.email ? cartUser.email : 'Guest'}`;
+</script>
+</body>
+</html>

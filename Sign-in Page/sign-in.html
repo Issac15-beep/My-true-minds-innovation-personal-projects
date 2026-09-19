@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In Page</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
     <section class="container">
@@ -35,14 +36,15 @@
                         <h1 class="login">Login your Account</h1>
                     </div>
 
-                    <div class="login-details">
+                    <form class="login-details" id="signin-form" novalidate>
                         <div class="first-login-details">
                         <h3 class="emails">Email or phone number</h3>
 
                             <div class="input">
                                 <img src="./Images/mail.svg" alt="Mail image" class="mail">
-                                <p class="email-address">name@gmail.com</p>
+                                <input id="signin-email" type="email" placeholder="name@gmail.com" autocomplete="email" required>
                             </div>
+                            <p class="signin-error" id="signin-email-error"></p>
                         </div>
 
                         <div class="second-login-details">
@@ -51,24 +53,25 @@
                             <div class="password-input">
                                 <div class="flex">
                                     <img src="./Images/lock (1).png" alt="Lock Image" class="lock">
-                                    <P class="asteric">*******</P>
+                                    <input id="signin-password" type="password" placeholder="******" autocomplete="current-password" required>
                                 </div>
 
                                 <div class="hidden">
-                                    <img src="./Images/visibility_off.svg" alt="" class="hidden-image">
+                                    <button type="button" id="signin-toggle" class="toggle-password" aria-label="Show password">
+                                        <img src="./Images/visibility_off.svg" alt="" class="hidden-image">
+                                    </button>
                                 </div>
                             </div>
+                            <p class="signin-error" id="signin-password-error"></p>
                         </div>
-                    </div>
+                    </form>
 
                     <div class="forgot">
-                        <p class="forgot-password">Forgot Password?</p>
+                        <a class="forgot-password" href="forgot-password.html">Forgot Password?</a>
                     </div>
 
                     <div class="continue-group">
-                        <div class="continue-btn">
-                            <p class="continue">Continue</p>
-                        </div>
+                        <button type="submit" form="signin-form" class="continue-btn">Continue</button>
 
                         <p class="continue-with">Or continue with</p>
                     </div>
@@ -80,13 +83,13 @@
                         </div>
 
                         <div class="facebook">
-                            <img src="./Images/facebook-logo.png" alt="Facebook-logo" class="facebook-image">
+                             <i class="fa-brands fa-apple apple-image" aria-hidden="true"></i>
                             <p class="with-apple">Continue with Apple</p>
                         </div>
                     </div>
 
                     <div class="final">
-                        <p class="dont">Don't have an account? <span>Create an account</span></p>
+                        <p class="dont">Don't have an account? <a href="../Sign-up Page/sign-up.html">Create an account</a></p>
                     </div>
                 </div>
             </div>
@@ -130,5 +133,41 @@
             </footer>
         </div>
     </section>
+    <script>
+        const signinToggle = document.getElementById('signin-toggle');
+        signinToggle.addEventListener('click', () => {
+            const password = document.getElementById('signin-password');
+            const image = signinToggle.querySelector('img');
+            const showing = password.type === 'password';
+            password.type = showing ? 'text' : 'password';
+            image.src = showing ? '../Sign-up Page/Images/visibility-on.png' : './Images/visibility_off.svg';
+            signinToggle.setAttribute('aria-label', `${showing ? 'Hide' : 'Show'} password`);
+        });
+
+        document.getElementById('signin-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const savedUser = JSON.parse(localStorage.getItem('chuksKitchenUser') || 'null');
+            const email = document.getElementById('signin-email');
+            const password = document.getElementById('signin-password');
+            const emailError = document.getElementById('signin-email-error');
+            const passwordError = document.getElementById('signin-password-error');
+            emailError.textContent = '';
+            passwordError.textContent = '';
+
+            if (!email.value.trim() || !email.validity.valid) {
+                emailError.textContent = 'Enter a valid email address.';
+                return;
+            }
+            if (!password.value) {
+                passwordError.textContent = 'Enter your password.';
+                return;
+            }
+            if (!savedUser || savedUser.email !== email.value.trim() || savedUser.password !== password.value) {
+                passwordError.textContent = 'Email or password is incorrect.';
+                return;
+            }
+            window.location.href = '../Home screen page/home-screen.html';
+        });
+    </script>
 </body>
 </html>

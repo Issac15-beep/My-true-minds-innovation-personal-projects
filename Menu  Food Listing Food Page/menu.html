@@ -10,18 +10,14 @@
     
     <!-- This is the navigation section of the home screen -->
     <nav>
-        <h2 class="chuks-kitchen">Chuks Kitchen</h2>
-        <h3 class="home">Home</h3>
-        <h3 class="explore">Explore</h3>
-        <h3 class="orders">My Orders</h3>
-        <h3 class="account">Account</h3>
-        <img src="./Images/Menu.png" alt="hamburger menu image" class="hamburger-menu"> <!--Needed for the mobile version of the home screen -->
-
-        <!-- This is the login button for the home screen -->
-        <div class="login-button">
-            <p class="login">Login</p>
-        </div>
+        <a class="brand-link" href="../Home screen page/home-screen.html"><h2 class="chuks-kitchen">Chuks Kitchen</h2></a>
+        <h3 class="home"><a href="../Home screen page/home-screen.html">Home</a></h3>
+        <h3 class="explore"><a href="menu.html">Explore</a></h3>
+        <h3 class="orders"><a href="../../cart.html">My Orders</a></h3>
+        <h3 class="account"><a href="../Home screen page/account.html">Account</a></h3>
+        <a href="../Home screen page/home-screen.html"><img src="./Images/Menu.png" alt="hamburger menu image" class="hamburger-menu"></a> <!--Needed for the mobile version of the home screen -->
     </nav>
+    <div class="welcome-row"><p class="welcome-message" data-welcome>Welcome, Guest</p></div>
 
     <!-- This is the home section of the home screen -->
     <div class="white-background">
@@ -32,17 +28,17 @@
 
         <section class="topic">
             <h2 class="topic-1">Menu Categories</h2>
-            <p class="topic-2">Popular</p>
-            <p class="topic-3">Jollof Rice & Entrees</p>
-            <p class="topic-3">Swallow & Soups</p>
-            <p class="topic-3">Grills & sides</p>
-            <p class="topic-3">Beverages</p>
-            <p class="topic-3">Desserts</p>
+            <a class="topic-2 active-category" href="#first-container">Popular</a>
+            <a class="topic-3" href="#second-container">Jollof Rice & Entrees</a>
+            <a class="topic-3" href="#third-container">Swallow & Soups</a>
+            <a class="topic-3" href="#fourth-container">Grills & Sides</a>
+            <a class="topic-3" href="#fifth-container">Beverages</a>
+            <a class="topic-3" href="#sixth-container">Desserts</a>
         </section>
     </div>
 
     <section class="popular-categories">
-        <div class="first-container">
+        <div class="first-container menu-container active-container" id="first-container">
             <h1 class="populars">Popular Categories</h1>
 
             <div class="categories">
@@ -138,7 +134,7 @@
             <p class="view">View All Categories</p>
         </div>
 
-        <div class="second-container">
+        <div class="second-container menu-container" id="second-container">
             <h1 class="entries">Jollof Rice & Entrees</h1>
 
             <div class="rice-entries">
@@ -230,7 +226,7 @@
             <p class="view">View All Categories</p>
         </div>
 
-        <div class="third-container">
+        <div class="third-container menu-container" id="third-container">
             <h1 class="soup">Swallows & soups</h1>
 
             <div class="swallows">
@@ -321,6 +317,33 @@
 
             <p class="view">View All Categories</p>
         </div>
+
+        <div class="fourth-container menu-container" id="fourth-container">
+            <h1 class="entries">Grills & Sides</h1>
+            <div class="rice-entries">
+                <div class="rice-entries-category-2 menu-card"><img src="./tilapia.jpg" alt="Grilled Tilapia Fish"><div class="rice-entries-category-content-2"><h1 class="rice-entries-category-heading-2">Grilled Tilapia Fish</h1><p class="rice-entries-category-paragraph-2">Whole tilapia seasoned with peppers and grilled until tender.</p><div class="category-flex"><p class="amount">₦3,500</p><img src="./Images/plus.png" alt="Add Grilled Tilapia Fish" class="plus"></div></div></div>
+                <div class="rice-entries-category-2 menu-card"><img src="./Images/desert.png" alt="Peppered Snail"><div class="rice-entries-category-content-2"><h1 class="rice-entries-category-heading-2">Peppered Snail</h1><p class="rice-entries-category-paragraph-2">Spicy, savory peppered snail served as a generous starter.</p><div class="category-flex"><p class="amount">₦4,500</p><img src="./Images/plus.png" alt="Add Peppered Snail" class="plus"></div></div></div>
+                <div class="rice-entries-category-2 menu-card"><img src="./suya.jpg" alt="Chicken Suya"><div class="rice-entries-category-content-2"><h1 class="rice-entries-category-heading-2">Chicken Suya</h1><p class="rice-entries-category-paragraph-2">Char-grilled chicken strips coated in smoky suya spice.</p><div class="category-flex"><p class="amount">₦3,200</p><img src="./Images/plus.png" alt="Add Chicken Suya" class="plus"></div></div></div>
+            </div>
+        </div>
+
+        <div class="fifth-container menu-container" id="fifth-container">
+            <h1 class="entries">Beverages</h1>
+            <div class="rice-entries">
+                <div class="rice-entries-category-2 menu-card"><img src="./zobo.webp" alt="Zobo Cooler"><div class="rice-entries-category-content-2"><h1 class="rice-entries-category-heading-2">Zobo Cooler</h1><p class="rice-entries-category-paragraph-2">Chilled hibiscus drink infused with ginger and pineapple.</p><div class="category-flex"><p class="amount">₦1,200</p><img src="./Images/plus.png" alt="Add Zobo Cooler" class="plus"></div></div></div>
+                <div class="rice-entries-category-2 menu-card"><img src="./juice.webp" alt="Pineapple Ginger Juice"><div class="rice-entries-category-content-2"><h1 class="rice-entries-category-heading-2">Pineapple Ginger Juice</h1><p class="rice-entries-category-paragraph-2">Fresh pineapple juice with a bright ginger finish.</p><div class="category-flex"><p class="amount">₦1,500</p><img src="./Images/plus.png" alt="Add Pineapple Ginger Juice" class="plus"></div></div></div>
+                <div class="rice-entries-category-2 menu-card"><img src="./chapman.png" alt="Creamy Chapman"><div class="rice-entries-category-content-2"><h1 class="rice-entries-category-heading-2">Creamy Chapman</h1><p class="rice-entries-category-paragraph-2">A refreshing Nigerian mocktail with citrus and fruit notes.</p><div class="category-flex"><p class="amount">₦1,800</p><img src="./Images/plus.png" alt="Add Creamy Chapman" class="plus"></div></div></div>
+            </div>
+        </div>
+
+        <div class="sixth-container menu-container" id="sixth-container">
+            <h1 class="entries">Desserts</h1>
+            <div class="rice-entries">
+                <div class="rice-entries-category-2 menu-card"><img src="./chinchin.webp" alt="Chin Chin"><div class="rice-entries-category-content-2"><h1 class="rice-entries-category-heading-2">Chin Chin</h1><p class="rice-entries-category-paragraph-2">Crunchy golden chin chin with a lightly sweet finish.</p><div class="category-flex"><p class="amount">₦1,500</p><img src="./Images/plus.png" alt="Add Chin Chin" class="plus"></div></div></div>
+                <div class="rice-entries-category-2 menu-card"><img src="./meatpie.webp" alt="Meat Pie"><div class="rice-entries-category-content-2"><h1 class="rice-entries-category-heading-2">Classic Meat Pie</h1><p class="rice-entries-category-paragraph-2">Flaky pastry filled with seasoned minced beef and vegetables.</p><div class="category-flex"><p class="amount">₦1,800</p><img src="./Images/plus.png" alt="Add Classic Meat Pie" class="plus"></div></div></div>
+                <div class="rice-entries-category-2 menu-card"><img src="./puff-puff.webp" alt="Puff Puff"><div class="rice-entries-category-content-2"><h1 class="rice-entries-category-heading-2">Puff Puff</h1><p class="rice-entries-category-paragraph-2">Soft, pillowy dough bites dusted with sugar.</p><div class="category-flex"><p class="amount">₦1,300</p><img src="./Images/plus.png" alt="Add Puff Puff" class="plus"></div></div></div>
+            </div>
+        </div>
     </section>
 
     <div class="whitespace"></div>
@@ -363,4 +386,55 @@
         </footer>
     </div>
 </body>
+<script>
+    const menuUser = JSON.parse(localStorage.getItem('chuksKitchenUser') || 'null');
+    document.querySelector('[data-welcome]').textContent = `Welcome, ${menuUser && menuUser.email ? menuUser.email : 'Guest'}`;
+
+    const categoryLinks = document.querySelectorAll('.topic a');
+    const menuContainers = document.querySelectorAll('.menu-container');
+
+    categoryLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            const target = document.querySelector(link.getAttribute('href'));
+            menuContainers.forEach((container) => {
+                container.classList.toggle('active-container', container === target);
+                container.classList.remove('show-all');
+            });
+            categoryLinks.forEach((item) => item.classList.toggle('active-category', item === link));
+        });
+    });
+
+    const viewAll = document.querySelector('#first-container .view');
+    viewAll.addEventListener('click', () => {
+        const firstContainer = document.getElementById('first-container');
+        firstContainer.classList.toggle('show-all');
+        viewAll.textContent = firstContainer.classList.contains('show-all') ? 'Hide extra categories' : 'View All Categories';
+    });
+
+    document.querySelectorAll('.plus').forEach((plus) => {
+        plus.addEventListener('click', () => {
+            const card = plus.closest('.category, .category-2, .rice-entries-category, .rice-entries-category-2, .swallows-category, .swallows-category-2');
+            const heading = card.querySelector('h1');
+            const description = card.querySelector('p:not(.amount):not(.amount-2)');
+            const amount = card.querySelector('.amount, .amount-2');
+            const image = [...card.querySelectorAll('img')].find((item) => item !== plus);
+            const item = {
+                name: heading.textContent.trim(),
+                desc: description.textContent.trim(),
+                price: Number(amount.textContent.replace(/[^0-9]/g, '')),
+                image: image ? image.getAttribute('src') : '',
+                qty: 1
+            };
+            const cart = JSON.parse(localStorage.getItem('chuksKitchenCart') || '[]');
+            const existing = cart.find((cartItem) => cartItem.name === item.name);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push(item);
+            }
+            localStorage.setItem('chuksKitchenCart', JSON.stringify(cart));
+            window.location.href = '../../cart.html';
+        });
+    });
+</script>
 </html>

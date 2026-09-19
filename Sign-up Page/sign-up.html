@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Page</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
     <section class="container">
@@ -35,14 +36,15 @@
                         <h1 class="login">Login your Account</h1>
                     </div>
 
-                    <div class="login-details">
+                    <form class="login-details" id="signup-form" novalidate>
                         <div class="first-login-details">
                             <h3 class="emails">Email or phone number</h3>
 
                             <div class="input">
                                 <img src="./Images/mail.svg" alt="Mail image" class="mail">
-                                <p class="email-address">name@gmail.com</p>
+                                <input id="email" name="email" type="email" placeholder="name@gmail.com" autocomplete="email" required>
                             </div>
+                            <p class="error-message" id="email-error"></p>
                         </div>
 
                         <div class="second-login-details">
@@ -50,8 +52,9 @@
 
                             <div class="number-input">
                                 <img src="./Images/call.png" alt="Phone" class="phone-image">
-                                <p class="number">8123340690</p>
+                                <input id="phone" name="phone" type="tel" placeholder="8123340690" inputmode="numeric" maxlength="11" autocomplete="tel" required>
                             </div>
+                            <p class="error-message" id="phone-error"></p>
                         </div>
 
                         <div class="third-login-details">
@@ -60,13 +63,16 @@
                             <div class="password-input">
                                 <div class="flex">
                                     <img src="./Images/lock (1).png" alt="Lock Image" class="lock">
-                                    <P class="passcode">QWE123#</P>
+                                    <input id="password" name="password" type="password" placeholder="QWE123#" autocomplete="new-password" required>
                                 </div>
 
                                 <div class="hidden">
-                                    <img src="./Images/visibility_off.svg" alt="" class="hidden-image">
+                                    <button type="button" class="toggle-password" aria-label="Show password" data-target="password">
+                                        <img src="./Images/visibility-on.png" alt="" class="hidden-image">
+                                    </button>
                                 </div>
                             </div>
+                            <p class="error-message" id="password-error"></p>
                         </div>
 
                         <div class="fourth-login-details">
@@ -75,28 +81,30 @@
                             <div class="password-input">
                                 <div class="flex">
                                     <img src="./Images/lock (1).png" alt="Lock Image" class="lock">
-                                    <P class="passcode">QWE123#</P>
+                                    <input id="confirm-password" name="confirm-password" type="password" placeholder="QWE123#" autocomplete="new-password" required>
                                 </div>
 
                                 <div class="visible">
-                                    <img src="./Images/visibility-on.png" alt="" class="visible-image">
+                                    <button type="button" class="toggle-password" aria-label="Show confirm password" data-target="confirm-password">
+                                        <img src="./Images/visibility-on.png" alt="" class="visible-image">
+                                    </button>
                                 </div>
                            </div>
+                           <p class="error-message" id="confirm-password-error"></p>
                         </div>
 
                         <div class="agree">
-                            <img src="./Images/check_small.png" alt="Check" class="tick">
+                            <input id="terms" name="terms" type="checkbox" required>
+                            <label for="terms" class="checkbox-label"><i class="fa-solid fa-check" aria-hidden="true"></i></label>
                             <p class="i-agree">I agree to the <span>Terms & Conditions</span> and <span>Privacy Policy</span></p>
                         </div>
-                    </div>
+                        <p class="error-message" id="terms-error"></p>
 
-                    <div class="continue-group">
-                        <div class="continue-btn">
-                            <p class="continue">Continue</p>
+                        <div class="continue-group">
+                            <button type="submit" class="continue-btn">Continue</button>
+                            <p class="continue-with">Or continue with</p>
                         </div>
-
-                        <p class="continue-with">Or continue with</p>
-                    </div>
+                    </form>
 
                     <div class="social-media">
                         <div class="goggle">
@@ -105,13 +113,13 @@
                         </div>
 
                         <div class="facebook">
-                            <img src="./Images/facebook-logo.png" alt="Facebook-logo" class="facebook-image">
+                            <i class="fa-brands fa-apple apple-image" aria-hidden="true"></i>
                             <p class="with-apple">Continue with Apple</p>
                         </div>
                     </div>
 
                     <div class="final">
-                        <p class="already">Already have an account? <span>Sign In</span></p>
+                        <p class="already">Already have an account? <a href="../Sign-in Page/sign-in.html">Sign In</a></p>
                     </div>
                 </div>
             </div>
@@ -155,5 +163,64 @@
             </footer>
         </div>
     </section>
+    <script>
+        document.querySelectorAll('.toggle-password').forEach((toggle) => {
+            toggle.addEventListener('click', () => {
+                const input = document.getElementById(toggle.dataset.target);
+                const image = toggle.querySelector('img');
+                const showing = input.type === 'password';
+                input.type = showing ? 'text' : 'password';
+                image.src = showing ? './Images/visibility_off.svg' : './Images/visibility-on.png';
+                toggle.setAttribute('aria-label', `${showing ? 'Hide' : 'Show'} ${input.id === 'password' ? 'password' : 'confirm password'}`);
+            });
+        });
+
+        document.getElementById('signup-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirm-password');
+            const terms = document.getElementById('terms');
+            const errors = {
+                email: document.getElementById('email-error'),
+                phone: document.getElementById('phone-error'),
+                password: document.getElementById('password-error'),
+                confirm: document.getElementById('confirm-password-error'),
+                terms: document.getElementById('terms-error')
+            };
+            Object.values(errors).forEach((error) => error.textContent = '');
+            let valid = true;
+
+            if (!email.value.trim() || !email.validity.valid) {
+                errors.email.textContent = 'Enter a valid email address.';
+                valid = false;
+            }
+            if (!/^\d{10,11}$/.test(phone.value)) {
+                errors.phone.textContent = 'Enter 10 or 11 digits only.';
+                valid = false;
+            }
+            if (!password.value || !/\d/.test(password.value)) {
+                errors.password.textContent = 'Password is required and must contain a number.';
+                valid = false;
+            }
+            if (!confirmPassword.value || confirmPassword.value !== password.value) {
+                errors.confirm.textContent = 'Passwords must match.';
+                valid = false;
+            }
+            if (!terms.checked) {
+                errors.terms.textContent = 'You must agree to the terms.';
+                valid = false;
+            }
+            if (!valid) return;
+
+            localStorage.setItem('chuksKitchenUser', JSON.stringify({
+                email: email.value.trim(),
+                phone: phone.value,
+                password: password.value
+            }));
+            window.location.href = '../Home screen page/home-screen.html';
+        });
+    </script>
 </body>
 </html>

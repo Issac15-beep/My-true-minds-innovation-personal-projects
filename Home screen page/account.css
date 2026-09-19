@@ -1,0 +1,123 @@
+.account-main {
+    max-width: 68rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 6vw, 5rem) 1.25rem;
+}
+
+.account-hero {
+    max-width: 42rem;
+    margin-bottom: 2rem;
+}
+
+.eyebrow {
+    margin: 0 0 0.5rem;
+    color: #FF7A18;
+    font: 700 0.75rem "Inter-semibold", sans-serif;
+    letter-spacing: 0.12em;
+}
+
+.account-hero h1 {
+    margin: 0;
+    color: #1F2937;
+    font: 700 clamp(2.2rem, 6vw, 4rem) "Inter", sans-serif;
+}
+
+.account-hero > p:last-child {
+    color: #6B7280;
+    font: 1rem/1.6 "Inter-regular", sans-serif;
+}
+
+.account-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 48rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(31, 41, 55, 0.08);
+}
+
+.avatar {
+    width: 4.5rem;
+    height: 4.5rem;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: #FF7A18;
+    color: white;
+    font: 700 2rem "Inter", sans-serif;
+}
+
+.account-details {
+    width: 100%;
+}
+
+.account-details h2 {
+    margin: 0 0 1rem;
+    color: #1F2937;
+    font: 600 1.25rem "Inter-semibold", sans-serif;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-top: 1px solid #E5E7EB;
+    font-family: "Inter-regular", sans-serif;
+}
+
+.detail-row span {
+    color: #6B7280;
+}
+
+.detail-row strong {
+    color: #1F2937;
+    font-weight: 600;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.detail-row .status {
+    color: #16A34A;
+}
+
+.account-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.account-action {
+    padding: 0.85rem 1.25rem;
+    border-radius: 8px;
+    font: 600 0.9rem "Inter-semibold", sans-serif;
+    text-decoration: none;
+}
+
+.account-action.primary {
+    background: #FF7A18;
+    color: white;
+}
+
+.account-action.secondary {
+    border: 1px solid #FF7A18;
+    color: #FF7A18;
+}
+
+@media screen and (max-width: 899px) {
+    .account-main nav {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .account-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

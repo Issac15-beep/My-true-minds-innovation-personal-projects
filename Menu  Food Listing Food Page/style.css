@@ -1,3 +1,61 @@
+ .hamburger-button {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.mobile-menu,
+.mobile-menu-overlay {
+    display: none;
+}
+
+@media screen and (min-width: 900px) {
+    .hamburger-button { display: none; }
+}
+
+@media screen and (max-width: 899px) {
+    body.menu-open { overflow: hidden; }
+    .mobile-menu-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 20;
+        display: block;
+        background: rgba(31, 41, 55, 0.38);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 260ms ease;
+    }
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 21;
+        display: flex;
+        width: min(82vw, 22rem);
+        height: 100vh;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 2rem 1.5rem;
+        background: #fff;
+        box-shadow: -1rem 0 2.5rem rgba(31, 41, 55, 0.16);
+        transform: translateX(100%);
+        transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .mobile-menu .home, .mobile-menu .explore, .mobile-menu .orders, .mobile-menu .account {
+        display: block;
+        margin: 0;
+        border-bottom: 1px solid #eef0f2;
+        font: 600 1.05rem/1.2 "Inter-semibold", sans-serif;
+    }
+    .mobile-menu h3 a { display: block; padding: 1.1rem 0.25rem; color: #1f2937; text-decoration: none; }
+    .mobile-menu h3 a:hover, .mobile-menu h3 a:focus-visible { color: #ff7a18; }
+    .mobile-menu-close { align-self: flex-end; border: 0; background: transparent; color: #1f2937; cursor: pointer; font: 300 2rem/1 "Inter-regular", sans-serif; }
+    .mobile-menu-label { margin: 1.5rem 0 1rem; color: #ff7a18; font: 600 0.75rem/1 "Inter-semibold", sans-serif; letter-spacing: 0.12em; text-transform: uppercase; }
+    body.menu-open .mobile-menu { transform: translateX(0); }
+    body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
+}
 @font-face {
     font-family: "Inter";
     src: url("./Fonts/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
@@ -207,19 +265,10 @@ h3, .login-button, .final {
     display: flex;
 }
 
-.menu-container.active-container .rice-entries-category-2,
-.menu-container.active-container .swallows-category-2 {
-    display: flex;
-}
-
 .menu-container > h1.entries {
     width: 100%;
     margin: 0 0 1rem;
     text-align: center;
-}
-
-.menu-card {
-    overflow: hidden;
 }
 
 .menu-card > img {
@@ -230,14 +279,6 @@ h3, .login-button, .final {
     object-fit: cover;
     border-radius: 5px;
     flex: 0 0 auto;
-}
-
-.first-container.active-container .category-2 {
-    display: none;
-}
-
-.first-container.show-all .category-2 {
-    display: flex;
 }
 
 .categories, .rice-entries, .swallows {
@@ -264,16 +305,60 @@ h3, .login-button, .final {
 }
 
 .category-2, .rice-entries-category-2, .swallows-category-2 {
-    display: none;
+    display: block;
+}
+
+.menu-container.show-all .category-2,
+.menu-container.show-all .rice-entries-category-2,
+.menu-container.show-all .swallows-category-2 {
+    display: flex;
+}
+
+.images {
+    width: 10rem;
+}
+
+@media screen and (max-width: 899px) {
+    #fourth-container .rice-entries-category-2,
+    #fifth-container .rice-entries-category-2,
+    #sixth-container .rice-entries-category-2 {
+        display: block;
+        width: 100%;
+        max-width: 24rem;
+        padding: 0;
+        gap: 0;
+    }
+
+    #fourth-container .menu-card > .images,
+    #fifth-container .menu-card > .images,
+    #sixth-container .menu-card > .images {
+        display: block;
+        width: 60%;
+        max-width: none;
+        height: 15vh;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    #fourth-container .rice-entries-category-content-2,
+    #fifth-container .rice-entries-category-content-2,
+    #sixth-container .rice-entries-category-content-2 {
+        display: block;
+    }
 }
 
 .image-category-2 {
-    display: none;
+    display: block;
+    width: 60%;
+    height: 15vh;
+    border-radius: 5px;
+    object-fit: cover;
 }
 
 .image-category {
     min-width: 11rem;
     width: 100%;
+    height:auto;
     border-radius: 5px;
 }
 
@@ -468,8 +553,9 @@ h3, .login-button, .final {
     
     }
 
-    .menu-container.active-container .rice-entries-category-2,
-    .menu-container.active-container .swallows-category-2 {
+    .menu-container .category-2,
+    .menu-container .rice-entries-category-2,
+    .menu-container .swallows-category-2 {
         display: block;
     }
     
@@ -496,8 +582,13 @@ h3, .login-button, .final {
     }
 
     .image-category {
-        display: none;
-    }
+     width: 100%;
+    max-width: 31rem;
+    height: auto;
+    flex: 0 1 11rem;
+    object-fit: cover;
+    border-radius: 5px;
+}
 
     .image-category-2 {
         display: block;
@@ -507,7 +598,7 @@ h3, .login-button, .final {
     }
     
     .rice-entries-category, .swallows-category {
-        display: none;
+        display: block;
         max-width: 24rem;
         padding: 0;
         gap: 0;
@@ -540,6 +631,12 @@ h3, .login-button, .final {
         gap: 0;
     }
 
+    .menu-container .category-2,
+    .menu-container .rice-entries-category-2,
+    .menu-container .swallows-category-2 {
+        display: block;
+    }
+
     .view {
         display: none;
     }
@@ -562,7 +659,7 @@ h3, .login-button, .final {
         margin: 2rem 0;
     }
 
-    .category-content, .rice-entries-category-content-2, .category-content-2, .swallows-category-content-2 {
+    .category-content, .rice-entries-category-content-2, .rice-entries-category-content, .category-content-2, .swallows-category-content-2, .swallows-category-content {
         padding: 1.3rem 0.9rem;
     }
 
@@ -574,9 +671,23 @@ h3, .login-button, .final {
         font-size: 1.1em;
     }
 
-    .amount {
+    .rice-entries-category-paragraph-2,
+    .swallows-category-paragraph-2 {
+        display: block;
+    }
+
+    .amount,
+    .rice-entries-category-content-2 .amount,
+    .swallows-category-content-2 .amount {
+        display: block;
         font-size: 1.2rem;
     }
+
+    .rice-entries-category-content-2 .category-flex,
+    .swallows-category-content-2 .category-flex {
+        display: flex;
+    }
+
     .amount-2 {
         display: none;
     }

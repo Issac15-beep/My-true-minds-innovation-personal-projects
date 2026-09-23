@@ -3,19 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Cart — Chuks Kitchen</title>
+<title>Payment Options — Chuks Kitchen</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="topbar">
-  <a class="logo" href="My-true-minds-innovation-personal-projects/Home screen page/home-screen.html">Chuks Kitchen</a>
+  <div class="logo">Chuks Kitchen</div>
   <ul class="topnav">
-    <li><a href="My-true-minds-innovation-personal-projects/Home screen page/home-screen.html">Home</a></li>
-    <li><a href="My-true-minds-innovation-personal-projects/Menu  Food Listing Food Page/menu.html">Explore</a></li>
-    <li class="active"><a href="cart.html">My Orders</a></li>
-    <li><a href="My-true-minds-innovation-personal-projects/Home screen page/account.html">Account</a></li>
+    <li>Home</li>
+    <li>Explore</li>
+    <li class="active">My Orders</li>
+    <li>Account</li>
   </ul>
+  <button class="login-btn">Login</button>
   <button class="hamburger-button" type="button" aria-label="Open navigation menu" aria-expanded="false"><img src="Home screen page/Images/Menu.png" alt="hamburger menu image" class="hamburger-menu"></button>
 </div>
 <div class="mobile-menu-overlay" data-menu-overlay></div>
@@ -27,17 +28,37 @@
   <h3 class="orders"><a href="cart.html">My Orders</a></h3>
   <h3 class="account"><a href="Home screen page/account.html">Account</a></h3>
 </aside>
-<div class="welcome-row"><div class="welcome-message" id="cart-welcome">Welcome, Guest</div></div>
 
 <main>
-  <h1 class="page-title">Your CART</h1>
-  <div class="card">
-    <div class="card-header">Your Cart</div>
-    <div id="cart-items"></div>
-    <div class="add-more">+ Add more items from Chuks Kitchen</div>
-  </div>
-  <div class="cart-footer-actions">
-    <a class="primary-btn" href="order-summary.html" style="text-decoration:none; text-align:center;">Proceed to Order Summary</a>
+  <h1 class="page-title">Payment Options</h1>
+  <div class="card card-pad">
+    <div class="card-header" style="padding:0 0 12px; margin-bottom:4px;">Payment</div>
+
+    <div class="field-label" style="margin-top:16px;">Pay With</div>
+    <div class="paywith-row">
+      <label class="radio-opt"><input type="radio" name="paywith" checked> Card</label>
+      <label class="radio-opt"><input type="radio" name="paywith"> Bank</label>
+      <label class="radio-opt"><input type="radio" name="paywith"> Transfer</label>
+    </div>
+
+    <div class="field-label" style="margin-top:0;">Card Number</div>
+    <input type="text" placeholder="1234 5678 9012 3456">
+
+    <div class="two-col" style="margin-top:16px;">
+      <div>
+        <div class="field-label" style="margin-top:0;">Expiration Date</div>
+        <input type="text" placeholder="MM/YY">
+      </div>
+      <div>
+        <div class="field-label" style="margin-top:0;">CVV</div>
+        <input type="text" placeholder="123">
+      </div>
+    </div>
+
+    <label class="checkbox-row"><input type="checkbox"> Save card details</label>
+
+    <button class="primary-btn" id="payBtn">Pay ₦9,900</button>
+    <div class="disclaimer">Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</div>
   </div>
 </main>
 
@@ -66,11 +87,7 @@
   </div>
 </footer>
 
-<script src="cart.js"></script>
-<script>
-  const cartUser = JSON.parse(localStorage.getItem('chuksKitchenUser') || 'null');
-  document.getElementById('cart-welcome').textContent = `Welcome, ${cartUser && cartUser.email ? cartUser.email : 'Guest'}`;
-</script>
+<script src="payment-options.js"></script>
 <script src="mobile-menu.js"></script>
 </body>
 </html>

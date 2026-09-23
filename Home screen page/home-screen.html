@@ -15,8 +15,17 @@
         <h3 class="explore"><a href="../Menu  Food Listing Food Page/menu.html">Explore</a></h3>
         <h3 class="orders"><a href="../../cart.html">My Orders</a></h3>
         <h3 class="account"><a href="account.html">Account</a></h3>
-        <a href="home-screen.html"><img src="./Images/Menu.png" alt="hamburger menu image" class="hamburger-menu"></a> <!--Needed for the mobile version of the home screen -->
+        <button class="hamburger-button" type="button" aria-label="Open navigation menu" aria-expanded="false"><img src="./Images/Menu.png" alt="hamburger menu image" class="hamburger-menu"></button>
     </nav>
+    <div class="mobile-menu-overlay" data-menu-overlay></div>
+    <aside class="mobile-menu" data-mobile-menu aria-hidden="true">
+        <button class="mobile-menu-close" type="button" aria-label="Close navigation menu" data-menu-close>&times;</button>
+        <p class="mobile-menu-label">Navigation</p>
+        <h3 class="home"><a href="home-screen.html">Home</a></h3>
+        <h3 class="explore"><a href="../Menu  Food Listing Food Page/menu.html">Explore</a></h3>
+        <h3 class="orders"><a href="../../cart.html">My Orders</a></h3>
+        <h3 class="account"><a href="account.html">Account</a></h3>
+    </aside>
     <div class="welcome-row">
         <p class="welcome-message" id="welcome-message"></p>
     </div>
@@ -63,26 +72,12 @@
                     <img src="./Images/Grills.png" alt="Grills and barbeque image" class="grills-bbq">
                     <p class="grills">Grills & BBQ</p>
                 </div>
-
                 
-                <!--The remaining categories is only needeed for the desktop version of the home screen -->
-                <div class="others">
+                <div class="category">
                     <img src="./Images/Treats.png" alt="Sweet Treats image" class="sweet">
                     <p class="treats">Sweet Treats</p>
                 </div>
-
-                <div class="others">
-                    <img src="./Images/Jollof Delight.png" alt="Jollof Delight image" class="jollofrice">
-                    <p class="jollof-delight">Jollof Delight</p>
-                </div>
-
-                <div class="others">
-                    <img src="./Images/Grills.png" alt="Grills and barbeque image" class="grills-bbq">
-                   <p class="grills">Grills & BBQ</p>
-                </div>
             </div>
-
-            <p class="view">View All Categories</p> <!--This is only needeed for the mobile version of the home screen -->
         </div>
 
         <div class="second-container"> 
@@ -91,7 +86,7 @@
             <!-- This container contains the chef's special meals in the app -->
             <div class="chefs-special">
                 <div class="special">
-                    <img src="./Images/Jollof Delight.png" alt="Jollof Rice and Grilled Chicken image" class="jollofrice">
+                    <img src="../Menu  Food Listing Food Page/grilled.jpg" alt="Jollof Rice and Grilled Chicken image" class="jollofrice">
                     <h2 class="rice">Jollof Rice & Grilled Chicken</h2>
                     <p class="signature">Smoky party-style jollof rice served with tender grilled chicken and plantain.</p>
 
@@ -131,7 +126,7 @@
 
                 <!--The remaining categories of the chef's specials is only needeed for the desktop version of the home screen -->
                 <div class="specials">
-                    <img src="./Images/Jollof Delight.png" alt="Jollof Delight image" class="jollofrice">
+                    <img src="../Menu  Food Listing Food Page/Images/Jollof-with-beef.png" alt="Jollof Delight image" class="jollofrice">
                     <h2 class="rice">Jollof Rice & Smoked Chicken</h2>
                     <p class="signature">Our signature Jolof rice, cooked to perfection, served with succulent smoked chicken.</p>
 
@@ -144,7 +139,7 @@
                 </div>
 
                 <div class="specials">
-                    <img src="./Images/Jollof-2.png" alt="Jollof Rice image" class="Jollofrice">
+                    <img src="./Images/Jollof-Chicken-2.png" alt="Jollof Rice image" class="Jollofrice-2">
                     <h2 class="fried">Jollof Rice & Fried Chicken</h2>
                     <p class="cooked">Our signature Jollof rice, cooked to perfection, served with succulent fried chicken. </p>
 
@@ -170,7 +165,7 @@
                 </div>
             </div>
 
-            <p class="view">View All Specials</p>
+            <p class="view" id="view-specials" role="button" tabindex="0" aria-expanded="false">View All Specials</p>
         </div>
     </section>
 
@@ -232,6 +227,23 @@
     const searchForm = document.getElementById('food-search');
     const searchInput = document.getElementById('food-search-input');
     const foodCards = document.querySelectorAll('.category, .others, .special, .specials');
+    const viewSpecials = document.getElementById('view-specials');
+    const additionalSpecials = document.querySelectorAll('.specials');
+
+    const toggleSpecials = () => {
+        const isExpanded = viewSpecials.getAttribute('aria-expanded') === 'true';
+        additionalSpecials.forEach((special) => special.classList.toggle('is-visible', !isExpanded));
+        viewSpecials.setAttribute('aria-expanded', String(!isExpanded));
+        viewSpecials.textContent = isExpanded ? 'View All Specials' : 'Show Fewer Specials';
+    };
+
+    viewSpecials.addEventListener('click', toggleSpecials);
+    viewSpecials.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            toggleSpecials();
+        }
+    });
 
     searchForm.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -267,3 +279,21 @@
 </script>
 
 <!-- The amends i want to make is to replace the button with a conrainer and make it responsive. -->
+<script>
+    const menuButton = document.querySelector('.hamburger-button');
+    const mobileMenu = document.querySelector('[data-mobile-menu]');
+    const menuOverlay = document.querySelector('[data-menu-overlay]');
+    const menuClose = document.querySelector('[data-menu-close]');
+    const setMenuState = (isOpen) => {
+        document.body.classList.toggle('menu-open', isOpen);
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+        if (isOpen) menuClose.focus();
+    };
+    menuButton.addEventListener('click', () => setMenuState(true));
+    menuClose.addEventListener('click', () => setMenuState(false));
+    menuOverlay.addEventListener('click', () => setMenuState(false));
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') setMenuState(false);
+    });
+</script>
